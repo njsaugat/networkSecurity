@@ -18,7 +18,13 @@ function decrypt(encryptedMessage) {
   const encryptedMessageArray = Array.from(encryptedMessage);
   let decryptedMessage = '';
   let leftPointer = 0;
-  let rightPointer = parseInt(encryptedMessageArray.length / 2 + 1);
+  let rightPointer;
+  if (encryptedMessageArray.length % 2 == 0) {
+    //even length
+    rightPointer = parseInt(encryptedMessageArray.length / 2);
+  } else {
+    rightPointer = parseInt(encryptedMessageArray.length / 2 + 1);
+  }
   for (let i = 0; i < encryptedMessageArray.length; i++) {
     if (i % 2 == 0) {
       decryptedMessage += encryptedMessageArray[leftPointer++];
@@ -29,5 +35,5 @@ function decrypt(encryptedMessage) {
   return decryptedMessage;
 }
 
-console.log(encrypt('message'));
-console.log(decrypt(encrypt('message')));
+console.log(encrypt('helloi'));
+console.log(decrypt(encrypt('helloi')));
