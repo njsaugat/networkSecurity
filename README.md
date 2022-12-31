@@ -1,3 +1,3 @@
 # networkSecurity
 
-# This a repo where all the algos are implemented 
+## This a repo where all the algorithms related to network security are implemented. 
